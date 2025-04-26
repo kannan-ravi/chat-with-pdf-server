@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: "https://chat-with-pdf-client.netlify.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: "Content-Type, Authorization, X-Requested-With",
