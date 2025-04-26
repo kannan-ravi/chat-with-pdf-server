@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 dotenv.config();
 
+import homeRouter from "./routes/home.route.js";
 import uploadRouter from "./routes/upload.route.js";
 import chatRouter from "./routes/chat.route.js";
 import errorHandler from "./middleware/error.middleware.js";
@@ -14,7 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("uploads"));
+app.use(express.static("public"));
 
+app.use("/", homeRouter);
 app.use("/upload", uploadRouter);
 app.use("/chat", chatRouter);
 
