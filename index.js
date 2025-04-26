@@ -9,14 +9,7 @@ import errorHandler from "./middleware/error.middleware.js";
 
 const PORT = process.env.PORT || 8000;
 const app = express();
-app.use(
-  cors({
-    origin: "https://chat-with-pdf-client.netlify.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    allowedHeaders: "Content-Type, Authorization, X-Requested-With",
-  })
-);
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
